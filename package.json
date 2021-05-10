@@ -1,0 +1,22 @@
+{
+  "author": "Srushith",
+  "bugs": {
+    "url": "https://github.com/SrushithR/Serverless-Space-ChatOps/issues"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "description": "A serverless Space ChatOps application to trigger a Space notification on lambda errors",
+  "homepage": "https://github.com/SrushithR/Serverless-Space-ChatOps#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "serverless-space-chatops",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SrushithR/Serverless-Space-ChatOps.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

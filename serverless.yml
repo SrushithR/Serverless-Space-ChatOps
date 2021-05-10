@@ -1,0 +1,10 @@
+service: serverless-space-chatops
+
+provider:
+  name: aws
+  region: "ap-south-1"
+  runtime: nodejs12.x
+  environment:
+    SPACE_ENDPOINT: ${env:SPACE_ENDPOINT}
+    CHANNEL_NAME: ${env:CHANNEL_NAME}
+    SPACE_AUTH_TOKEN: ${env:SPACE_AUTH_TOKEN}
