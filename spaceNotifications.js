@@ -1,24 +1,29 @@
-/* eslint-disable max-classes-per-file */
 const axios = require("axios");
 
-const { SPACE_ENDPOINT, CHANNEL_NAME, SPACE_AUTH_TOKEN } = process.env;
+const {SPACE_ENDPOINT, CHANNEL_NAME, SPACE_AUTH_TOKEN, AWS_REGION} = process.env;
 
 exports.sendMessage = (event) => {
   console.log("Input to the lambda function", event);
-  const { styleType, headerMessage, text, icon, footer } = event;
+
+  const styleType = "ERROR";
+  const headerMessage = `Internal Server Error!`;
+  const icon = "bug";
+  const CWLink = `https://${AWS_REGION}.console.aws.amazon.com/cloudwatch/home?region=${AWS_REGION}#cw:dashboard=Lambda`;
+  const footer = `CloudWatch Lambda Dashboard link - ${CWLink}`;
+
   return axios
     .post(
       SPACE_ENDPOINT,
       {
         recipient: {
           className: "MessageRecipient.Channel",
-          channel: { className: "ChatChannel.FromName", name: CHANNEL_NAME }
+          channel: {className: "ChatChannel.FromName", name: CHANNEL_NAME}
         },
         content: {
           className: "ChatMessage.Block",
           style: styleType,
           outline: {
-            icon: { icon },
+            icon: {icon},
             text
           },
           sections: [

@@ -3,7 +3,7 @@ name: Continuous deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   serverless-deploy:
@@ -26,5 +26,5 @@ jobs:
         run: npm install
 
       - name: Deploy dev
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run: serverless deploy --region ap-south-1 --verbose
