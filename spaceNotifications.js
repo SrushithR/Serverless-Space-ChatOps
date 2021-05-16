@@ -16,22 +16,23 @@ exports.sendMessage = (event) => {
       SPACE_ENDPOINT,
       {
         recipient: {
-          className: "MessageRecipient.Channel",
-          channel: {className: "ChatChannel.FromName", name: CHANNEL_NAME}
+          className: "MessageRecipient.Member",
+          member: "me"
+          // channel: {className: "ChatChannel.FromName", name: CHANNEL_NAME}
         },
         content: {
           className: "ChatMessage.Block",
           style: styleType,
           outline: {
             icon: {icon},
-            text
+            text: "Hello"
           },
           sections: [
             {
               className: "MessageSection",
               header: headerMessage,
               elements: [],
-              footer
+              // footer
             }
           ]
         }
