@@ -8,3 +8,9 @@ provider:
     SPACE_ENDPOINT: ${env:SPACE_ENDPOINT}
     CHANNEL_NAME: ${env:CHANNEL_NAME}
     SPACE_AUTH_TOKEN: ${env:SPACE_AUTH_TOKEN}
+
+functions:
+  space-notification:
+    handler: spaceNotifications.sendMessage
+  error-lambda:
+    handler: errorLambda.handler

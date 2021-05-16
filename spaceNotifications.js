@@ -4,7 +4,7 @@ const axios = require("axios");
 const { SPACE_ENDPOINT, CHANNEL_NAME, SPACE_AUTH_TOKEN } = process.env;
 
 exports.sendMessage = (event) => {
-  console.log(event);
+  console.log("Input to the lambda function", event);
   const { styleType, headerMessage, text, icon, footer } = event;
   return axios
     .post(
